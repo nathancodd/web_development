@@ -81,7 +81,7 @@
     </div>
 
     <!-- begin attempted reserveModal -->
-<div id="reserveModal" class="modal fade" role="dialog">
+    <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
@@ -120,7 +120,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- begin smoking thing attempt -->
+                            <!-- begin smoking thing -->
                             <div class="form-group row">
                                 <label for="Section" class="col-12 col-sm-4 col-form-label">Section</label>
                                 <div class="col-12 col-sm-8">
@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- end smoking thing attempt -->
+                            <!-- end smoking thing -->
                             <div class="form-group row">
                                 <label for="Date and Time" class="col-12 col-sm-4 col-form-label">Date and Time</label>
                                 <div class="col-12 col-sm-4">
@@ -226,10 +226,19 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    <!-- begin btn group -->
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carousel-pause">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="carousel-play">
+                            <span class="fa fa-play"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-
+        <!-- end carousel -->
         <!-- content row 1 -->
         <div class="row row-content align-items-center">
             <div class="col-12 col-sm-4 order-sm-last col-md-3">
@@ -281,10 +290,6 @@
             </div>
         </div>
     </div>
-
-
-    <!-- reserve a table -->
-    
 </div>
 
 
@@ -334,6 +339,17 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#mycarousel").carousel( {interval: 2000} );
+            $("#carousel-pause").click(function() {
+                $("#mycarousel").carousel("pause");
+            });
+            $("#carousel-play").click(function() {
+                $("#mycarousel").carousel("cycle");
+            });
+        });
+    </script>
     
 </body>
 
